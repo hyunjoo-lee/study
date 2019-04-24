@@ -13,13 +13,21 @@
 
 <section id="banner">
 	<h2><strong>수강신청 사이트</strong></h2>
-	<!-- <p>수강신청</p> -->1
+	<!-- <p>수강신청</p> -->
 	<ul class="actions">
 		<li><a href="#" class="button special">로그인 하러가기</a></li>
-		<li><a href="#" class="button special">로SDD그인 하러가기</a></li>
 	</ul>
 </section>
-
+<section id="one" class="wrapper special"></section>
+<footer id="footer">
+<div class="copyright">
+© Untitled. Design: <a href="http://templated.co/">TEMPLATED</a>.
+</div>
+</footer>
+<script src="/resources/js/jquery.min.js"></script>
+<script src="/resources/js/skel.min.js"></script>
+<script src="/resources/js/util.js"></script>
+<script src="/resources/js/main.js"></script>
 <script type="text/javascript" src="/resources/js/bootstrap.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
