@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.study.lee.domain.Study;
 import com.study.lee.service.StudyService;
@@ -23,13 +25,12 @@ import com.study.lee.service.StudyService;
 @Controller
 public class HomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class.getName());
 	
 	@Resource(name="com.study.lee.service.StudyServiceImpl")
+	//@Autowired
 	private StudyService studyservice;
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -41,9 +42,28 @@ public class HomeController {
 		List<Study> aa = studyservice.selectList();
 			
 		model.addAttribute("serverTime", formattedDate );
-		model.addAttribute("aa", aa );
+		model.addAttribute("aa", aa );		
 		
 		return "YO";
+	}
+	
+	
+	/*@RequestMapping(value="/itx/list.do")
+	public ModelAndView enrollSiteMain(HttpServletRequest req, HttpServletResponse res, ModelMap model) {
+		
+		ModelAndView mav = new ModelAndView();
+		return mav;
+		
+	}*/
+	@RequestMapping(value="/itx/login.do")
+	public ModelAndView loginMain(HttpServletRequest req) {
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/study/login");
+				
+		
+		return mav;
+		
 	}
 	
 }
