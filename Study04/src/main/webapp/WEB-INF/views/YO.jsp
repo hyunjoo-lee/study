@@ -32,56 +32,7 @@
 		</ul>
 	</section>
 	
-	<section id="one" class="wrapper special">
-		<%-- <h3>RequestURL</h3>
-		<ul>
-			<li>
-				${RequestURL}
-			</li>
-		</ul>
-		<h3>RequestURI</h3>
-		<ul>
-			<li>
-				${RequestURI}
-			</li>
-		</ul>
-		<h3>ContextPath</h3>
-		<ul>
-			<li>
-				${ContextPath}
-			</li>
-		</ul>
-		<h3>ServletPath</h3>
-		<ul>
-			<li>
-				${ServletPath}
-			</li>
-		</ul>
-		<h3>QueryString</h3>
-		<ul>
-			<li>
-				${QueryString}
-			</li>
-		</ul>
-		<h3>ServerName</h3>
-		<ul>
-			<li>
-				${ServerName}
-			</li>
-		</ul>
-		<h3>ServerPort</h3>
-		<ul>
-			<li>
-				${ServerPort}
-			</li>
-		</ul>
-		<h3>Method</h3>
-		<ul>
-			<li>
-				${Method}
-			</li>
-		</ul>	 --%>
-	</section>
+	
 <footer id="footer">
 	<div class="copyright">
 		© Untitled. Design: <a href="http://templated.co/">TEMPLATED</a>.

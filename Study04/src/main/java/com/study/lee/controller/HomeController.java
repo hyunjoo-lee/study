@@ -48,19 +48,12 @@ public class HomeController {
 	}
 	
 	
-	/*@RequestMapping(value="/itx/list.do")
-	public ModelAndView enrollSiteMain(HttpServletRequest req, HttpServletResponse res, ModelMap model) {
-		
-		ModelAndView mav = new ModelAndView();
-		return mav;
-		
-	}*/
+	
 	@RequestMapping(value="/itx/login.do")
-	public ModelAndView loginMain(HttpServletRequest req) {
-		
+	public ModelAndView loginMain() {
+		//HttpServletRequest req
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/study/login");
-				
 		
 		return mav;
 		
