@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.study.lee.domain.Study;
 import com.study.lee.mapper.StudyMapper;
 
-@Service("com.study.lee.service.StudyServiceImpl")
+@Service
 public class StudyServiceImpl implements StudyService{
 
 	@Autowired

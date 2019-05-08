@@ -6,6 +6,9 @@
 <mapper namespace="com.study.lee.mapper.StudyMapper">
 <!-- 해당 부분의 id는 MapperClass의 함수 이름과 유사하여야 합니다. -->
 	<select id="selectlist"  resultType="com.study.lee.domain.Study">
-		select * from TB_STUDY_TEST
+		select * 
+		  from TB_STUDY_TEST 
+		 where userId = #{userId} 
+		   and userPw = #{userPw}
 	</select>
 </mapper>
