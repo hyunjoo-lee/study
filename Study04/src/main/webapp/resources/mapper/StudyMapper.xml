@@ -5,10 +5,12 @@
 <!-- 해당 부분의 namespace는 project package + Mapper Package + Mapper Interface 이름입니다. -->
 <mapper namespace="com.study.lee.mapper.StudyMapper">
 <!-- 해당 부분의 id는 MapperClass의 함수 이름과 유사하여야 합니다. -->
-	<select id="selectlist"  resultType="com.study.lee.domain.Study">
-		select * 
+	<select id="loginCheck"  parameterType="java.util.Map" resultType="com.study.lee.domain.Study">
+		select ID AS id
+			 , PASSWORD AS password
 		  from TB_STUDY_TEST 
-		 where userId = #{userId} 
-		   and userPw = #{userPw}
+		 where ID = #{id}
+		   and PASSWORD = #{password}
 	</select>
 </mapper>
+

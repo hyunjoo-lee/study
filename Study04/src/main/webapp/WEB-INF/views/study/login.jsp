@@ -19,15 +19,16 @@
 			<header>
 				<h2>로그인 화면</h2>
 			</header>
-			<form method="post" action="#">
+			<form method="post" action="/itx/loginCheck.do">
+				<input value="${msg}">
 				<div>
-					<label for="ID">아이디</label>
+					<label for="id">아이디</label>
 					<input name="id" id="id" type="text">
 				</div>
 				
 				<div>
-					<label for="pwd">비밀번호</label>
-					<input name="pwd" id="pwd" type="password">
+					<label for="password">비밀번호</label>
+					<input name="password" id="password" type="password">
 				</div>
 				<div class="inner" style="padding-top:30px;">
 				<ul class="actions">
@@ -43,8 +44,8 @@
 				</div>
 				<div class="copyright" style="padding-top:30px;">
 					<ul style="list-style:none">
-						<li><a href="#" onclick="location.href='/itx/signUp.do'">회원가입</a></li>
-						<li><a href="http://templated.co/">아이디/비번 찾기</a></li>
+						<li><a href="/itx/signUp.do">회원가입</a></li>
+						<li><a href="/itx/findInfo.do">아이디/비번 찾기</a></li>
 					</ul>
 				</div>
 			</form>

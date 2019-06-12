@@ -2,6 +2,8 @@ package com.study.lee.controller;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.study.lee.service.StudyService;
@@ -17,9 +20,9 @@ import com.study.lee.service.StudyService;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class ApiMainController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class.getName());
+	private static final Logger logger = LoggerFactory.getLogger(ApiMainController.class.getName());
 	
 	@Autowired
 	private StudyService studyservice;
@@ -28,12 +31,27 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		return "YO";
 	}
-	
+
 	//로그인 화면
 	@RequestMapping(value="/itx/login.do")
-	public ModelAndView loginMain() {
+	public String loginMain() {
+		return "/study/login";
+	}
+	
+	//로그인 절차
+	@RequestMapping(value="/itx/loginCheck.do" , method=RequestMethod.POST)
+	public ModelAndView loginCheck(@RequestParam(name="id") String id
+								  ,@RequestParam(name="password") String password
+								  ,HttpSession session) {
+		boolean result = studyservice.loginCheck(id,password,session);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/study/login");
+		if(result == true) {
+			mav.setViewName("/YO");
+			mav.addObject("msg", "success");
+		}else {
+			mav.setViewName("/study/login");
+			mav.addObject("msg", "false");
+		}
 		return mav;
 	}
 	
@@ -52,5 +70,6 @@ public class HomeController {
 		mav.setViewName("/study/findInfo");
 		return mav;
 	}
+	
 	
 }

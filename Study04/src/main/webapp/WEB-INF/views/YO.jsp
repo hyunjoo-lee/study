@@ -28,7 +28,7 @@
 			<li><a href="/itx/login.do" class="button special">로그인 하러가기</a></li>
 		</ul>
 	</section>
-	
+	<input value="${msg}">
 	
 <footer id="footer">
 	<div class="copyright">
